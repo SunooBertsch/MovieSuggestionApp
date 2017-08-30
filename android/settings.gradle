@@ -1,0 +1,3 @@
+rootProject.name = 'hack2'
+
+include ':app'
