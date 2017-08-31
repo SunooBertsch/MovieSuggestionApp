@@ -1,12 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native'; //View is primitve element to position/wrap/style
+import { Text, TextInput, View } from 'react-native'; //View is primitve element to position/wrap/style
+import SearchBar from './searchbar.js';
 
-const Header = (props) => {
-	const { textStyle, viewStyle } = styles;
+
+const Landing = (props) => {
+	const { textStyle, textBar, viewStyle } = styles;
 
 	return (
 	<View style ={viewStyle}> 
-		<Text style ={textStyle}>{props.headerText}</Text>
+		<SearchBar />
 	</View>	
 	);
 };
@@ -28,7 +30,6 @@ const styles = {
 	textStyle: {
 		fontSize: 20
 	},
-
 };
 
-export default Header;
+export default Landing;
