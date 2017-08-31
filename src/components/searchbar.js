@@ -1,30 +1,35 @@
-import React, {Component} from 'react';
-import {TextInput, Text, View} from 'react-native';
+import React, { Component } from "react";
+import { TextInput, Text, View } from "react-native";
 
 class SearchBar extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      value : ""
-    }
+      text: ""
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange(event){
-    this.setState({value: event.target.value})
+  handleChange(text) {
+    this.setState({ text });
+    console.log(this.state.text);
   }
-  handleSubmit(event){
-    event.preventDefault();
+  handleSubmit() {
+    console.log(this.state.text);
   }
-  render(){
+  render() {
     return (
-      <Text>
-        Hello
-      </Text>
-    )
+      <View>
+        <TextInput
+          multiline={false}
+          autoCorrect={false}
+          placeholder="Enter a genre"
+          onSubmitEditing={this.handleSubmit}
+          onChangeText={this.handleChange}
+          value={this.state.value}
+        />
+      </View>
+    );
   }
 }
 export default SearchBar;
-
-
-
