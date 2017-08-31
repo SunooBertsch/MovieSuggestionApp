@@ -3,20 +3,19 @@
  * https://github.com/facebook/react-native
  * @flow
  */
- //react-native init 'filename' (starts up new folder for new project)
- //cmd+D to open console.log on chrome
- //react-native run-ios (starts iphone sim)
+//react-native init 'filename' (starts up new folder for new project)
+//cmd+D to open console.log on chrome
+//react-native run-ios (starts iphone sim)
 
-import React from 'react';
-import { Text, View, AppRegistry, StyleSheet } from 'react-native';
-import {NativeRouter, Route, Link} from 'react-router-native';
-import Landing from './src/components/landing.js'
-import random from './src/components/random.js' 
+import React from "react";
+import { Text, View, AppRegistry, StyleSheet } from "react-native";
+import { NativeRouter, Route, Link } from "react-router-native";
+import Landing from "./src/components/landing.js";
+import random from "./src/components/random.js";
 
-const App = () => (
+const App = () =>
   <NativeRouter>
     <Landing />
-  </NativeRouter>
-);
+  </NativeRouter>;
 
-AppRegistry.registerComponent('hack2', () => App);
+AppRegistry.registerComponent("hack2", () => App);
