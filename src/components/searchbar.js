@@ -18,7 +18,6 @@ class SearchBar extends Component {
   }
   handleSubmit() {
     this.state.exec = true;
-    this.render();
   }
   render() {
     if (this.state.exec === false) {
