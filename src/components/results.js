@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, TextInput, View } from "react-native";
+import { Text, TextInput, View, WebView } from "react-native";
 import axios from "axios";
 
 class Result extends Component {
@@ -26,9 +26,10 @@ class Result extends Component {
   }
   render() {
     return (
-      <Text>
-        ${this.state.result}
-      </Text>
+      <WebView
+        source={{ uri: "https://youtube.com/" }}
+        style={{ height: "100%" }}
+      />
     );
   }
 }

@@ -71,7 +71,7 @@ class SearchBar extends Component {
           id = "18";
           break;
       }
-      return <Result query={id} />;
+      return <Result query={id} style={{ height: 600 }} />;
     }
   }
 }
