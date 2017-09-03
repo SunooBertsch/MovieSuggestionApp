@@ -7,7 +7,7 @@ const Landing = props => {
     <View
       style={{
         flexDirection: "row",
-        height: 700,
+        height: 413,
         padding: 20,
         alignSelf: "stretch"
       }}>

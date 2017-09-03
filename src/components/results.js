@@ -7,18 +7,19 @@ class Result extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: ""
+      videoId: ""
     };
   }
   youtubeSearch(title) {
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?key=${KEYS.youtube}&part=snippet&type=video&maxResults=1&q=${title}`
+      `https://www.googleapis.com/youtube/v3/search?key=${KEYS.youtube}&part=snippet&type=video&maxResults=1&q=${title}&topicId=/m/02vxn`
     )
       .then(resp => {
         return resp.json();
       })
       .then(json => {
-        console.log(json.items[0].snippet.title);
+        console.log(json);
+        this.setState({ videoId: json.items[0].id.videoId });
       });
   }
   tmdbMovieSuggestion() {
@@ -43,12 +44,18 @@ class Result extends Component {
     this.tmdbMovieSuggestion();
   }
   render() {
-    return (
-      <WebView
-        source={{ uri: "https://youtube.com/" }}
-        style={{ height: "100%" }}
-      />
-    );
+    if (this.state.videoID === "") {
+      return <Text>Loading....</Text>;
+    } else {
+      return (
+        <WebView
+          source={{
+            uri: `https://www.youtube.com/watch?v=${this.state.videoId}`
+          }}
+          style={{ height: "50%" }}
+        />
+      );
+    }
   }
 }
 
